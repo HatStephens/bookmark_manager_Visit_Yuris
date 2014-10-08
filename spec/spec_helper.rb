@@ -5,7 +5,7 @@ ENV["RACK_ENV"] = 'test' # because we need to know what database to work with
 # because the server needs to know
 # what environment it's running it: test or development.
 # The environment determines what database to use.
-require './server'
+require './app/server'
 require 'database_cleaner'
 require 'capybara/rspec'
 
@@ -32,6 +32,7 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
   config.before(:suite) do
+    DataMapper.auto_migrate!  #Used to update/migrate the test database to match the development one
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
