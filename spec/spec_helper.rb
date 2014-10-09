@@ -32,7 +32,7 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
   config.before(:suite) do
-    DataMapper.auto_migrate!  #Used to update/migrate the test database to match the development one
+    # DataMapper.auto_migrate!  #Used to update/migrate the test database to match the development one # Now added to Rakefile
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
