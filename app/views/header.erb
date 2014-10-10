@@ -1,9 +1,9 @@
 <header>
-	<h1 id='logo'>Visit Yuris - The Bookmark Manager</h1>
+	<a href='/'><h1 id='logo'>Visit Yuris - Bookmark Manager</h1></a>
 	<nav id='user-links'>
 		<% if current_user %>
-			<h3 id='welcome-message'>Welcome, <%= current_user.email %></h3>
-
+			<h4>Welcome, <%= current_user.email %></h4>
+			<a href='/links/new' id='new_link' class='button highlighted'>Add link</a>
 			<form  id='sign-out' method='post' action='/sessions'>
 				<input type='hidden' name='_method' value='delete'>
 				<input type='submit' value='Sign out' class='button'>

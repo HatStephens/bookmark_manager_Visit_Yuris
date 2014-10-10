@@ -11,8 +11,13 @@
 <body>
 	<%= partial :header %>
 	<%= partial :flash %>
-	<%= yield %>
+	<div id='container'>
+    <%= yield %>
+  </div>
 
 </body>
+<footer>
+	<%= partial :footer %>
+</footer>
 
 </html>

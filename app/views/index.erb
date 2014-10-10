@@ -1,17 +1,5 @@
-<h1>Welcome to Yuris!</h1>
-
-<h3>Current links:</h3>
-<ul>
-	<% @links.each do |link| %>
-		<li><a href="<%= link.uri %>"><%= link.title %></a></li>
-	<% end %>
-</ul>
-
-<section id="new-link">
-	<form action='/links' method='post'>
-		Uri: <input type='text' name='uri'>
-		Title: <input type='text' name='title'>
-		Tags: <input type='text' name='tags'>
-		<input type='submit' value='Add link'>
-	</form>
-</section>		
+<ul id='links'>
+  <% @links.each do |link| %>
+    <%= partial :link, locals: {link: link}  %>
+  <% end %>
+</ul>  

@@ -1,13 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-	background-color: #fff;
 	font-family: Helvetica, Arial, sans-serif;
 	width: 80%;
 	margin: 0px auto;
+	background-image: url(/images/seamless_paper_texture.png);
 }
 
-a.button {
+.button {
 	display: inline-block; /* display inline but have dimensions */
-	width: 100px;
+	width: 110px;
 	background-color: #ffaaaa;
 	border: 2px solid white;
 	color: #530000;
@@ -18,6 +22,13 @@ a.button {
 	margin-left: 5px;
 	margin-right: 5px;
 	text-shadow: 0 0 4px rgba(0,0,0, 0.4);
+	box-shadow: 0 0 10px rgba(0,0,0,0.8);
+	font-size: 16px;
+	cursor: pointer;
+}
+
+a.button.highlighted {
+  background-color: #ff3333;
 }
 
 header {
@@ -27,15 +38,136 @@ header {
 	padding: 0px 20px;
 	margin: 0px auto;
 }
-
-header > * {
-	margin: auto 0;
+header a {
+	text-decoration: none;
+	margin: 0px;
 }
 
-header #logo {
+header h1 {
+	margin: auto;
+	margin-top: 5px;
+}
+
+header > * {
+	margin: auto 0px;
+}
+
+#logo {
 	color: #530000;
 	margin-right: 50px;
 	display: flex;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 2em;
+}
+
+#user-links {
+    flex: 1;    /* http://learnlayout.com/flexbox.html */
+    -webkit-flex: 1;
+    display: flex;
+}
+
+header #user-links > * {
+	display: inline-block;
+	margin: auto 10px;
+}
+
+#sign-out {
+	margin: auto 10px;
+}
+
+#container {
+  background-color: white;
+  margin: 40px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+.link {
+  background-color: #EEE; /* same as #EEEEEE */
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+  /* 10px for top and bottom, inherit from parent */
+  /* for left and right */
+  margin: 10px inherit;
+  padding: 15px 10px;
+  list-style-type: none;
+}
+
+.link a.title {
+    /* to make it slightly more prominent */
+    letter-spacing: 1px;
+  }
+
+.link .description {
+    margin: 10px inherit;
+  }
+
+.link .source {
+    /* http://learnlayout.com/float.html and the next 4 sections */
+    float: right;
+    font-size: 12px;
+  }
+
+#links-container {
+	margin-top: 10px;
+	border: 1px solid;
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	background-color: grey;
+}
+
+#links {
+	padding: 10px;
+}
+
+h1 {
+  color: #530000;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.5em;
+}
+
+form {
+  text-align: left;
+}
+
+  form p {
+    margin: 10px 0;
+  }
+
+  form input[type="text"], form input[type="password"] {
+    border: 1px solid black;
+    font-size: 16px;
+    width: 400px;
+  }
+
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.2);
+  margin: 0px auto;
+}
+
+  footer > * {
+    margin: auto inherit;
+  }
+
+  footer img {
+    /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
+    vertical-align: top;
+  }
+
+  footer #technologies {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  footer p {
+    padding: 5px 25px;
+  }
+
+  #notice {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(67,183,120,0.75);
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  color: white;
 }

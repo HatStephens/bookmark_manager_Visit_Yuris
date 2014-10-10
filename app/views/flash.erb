@@ -1,14 +1,13 @@
 <% if flash[:notice] %>
-			<section id='notice'>
+			<section id='flash notice'>
 				<%= flash[:notice] %>
 			</section>
 <% end %>
 
 <%if flash[:errors] && !flash[:errors].empty? %>
-		Sorry, there were the following problems with the form:
-		<ul id='errors'>
+		<ul>
 			<% flash[:errors].each do |error| %>
-				<li><%= error %></li>
+				<li class='flash error'><%= error %></li>
 			<% end %>
 		</ul>
 <% end %>
